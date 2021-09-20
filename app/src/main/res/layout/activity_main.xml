@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,29 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextCodigo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/edText_itrCodigo"
-        android:hintTextColor="#78909C"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:singleLine="true"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        tools:ignore="TextContrastCheck"
-        android:autofillHints="" />
-
-    <Button
-        android:id="@+id/buttonAceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="20sp"
-        android:backgroundTint="@color/purple_500"
-        android:text="@string/Aceptar" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -84,7 +61,8 @@
                 android:text="@string/btnPreg4"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg5"
@@ -94,7 +72,8 @@
                 android:text="@string/btnPreg5"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg6"
@@ -104,7 +83,8 @@
                 android:text="@string/btnPreg6"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg7"
@@ -114,7 +94,8 @@
                 android:text="@string/btnPreg7"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg8"
@@ -124,7 +105,8 @@
                 android:text="@string/btnPreg8"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg9"
@@ -134,7 +116,8 @@
                 android:text="@string/btnPreg9"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg10"
@@ -145,7 +128,8 @@
                 android:text="@string/btnPreg10"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                tools:ignore="TextContrastCheck" />
 
             <Button
                 android:id="@+id/btnPreg11"
