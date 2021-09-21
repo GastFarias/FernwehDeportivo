@@ -15,11 +15,10 @@ public class Utilidades {
     public static final String CAMPO_PUNTOS = "Puntos";
 
 
-    public static final String CREAR_TABLA_PREGUNTAS = "CREATE TABLE "+TABLA_PREGUNTAS+" " +
-            "("+CAMPO_ID+" INTEGER, "+CAMPO_PREGUNTA+" TEXT, "+CAMPO_RESP_CORRECTA+" TEXT, "+CAMPO_RESP_INCORRECTA1+ " TEXT, "
-            +CAMPO_RESP_INCORRECTA2+" TEXT, "+CAMPO_RESP_INCORRECTA3+" TEXT, "+CAMPO_TIPO_PREGUNTA+
-            " INTEGER, "+CAMPO_GUIA+" INTEGER, "+CAMPO_PUNTOS+" INTEGER)";
-
-
+    public static final String CREAR_TABLA_PREGUNTAS = "CREATE TABLE " + TABLA_PREGUNTAS + " " +
+            "(" + CAMPO_ID + " INTEGER, " + CAMPO_PREGUNTA + " TEXT, " + CAMPO_RESP_CORRECTA + " TEXT, " + CAMPO_RESP_INCORRECTA1 + " TEXT, "
+            + CAMPO_RESP_INCORRECTA2 + " TEXT, " + CAMPO_RESP_INCORRECTA3 + " TEXT, " + CAMPO_TIPO_PREGUNTA +
+            " INTEGER, " + CAMPO_GUIA + " INTEGER, " + CAMPO_PUNTOS + " INTEGER)";
 
 }
+
