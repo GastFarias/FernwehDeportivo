@@ -17,15 +17,17 @@ public class Preguntas {
                      Integer guia, Integer puntos) {
 
         this.id = id;
-        Pregunta = pregunta;
-        RespCorrecta = respCorrecta;
-        RespIncorrecta1 = respIncorrecta1;
-        RespIncorrecta2 = respIncorrecta2;
-        RespIncorrecta3 = respIncorrecta3;
-        TipoPregunta = tipoPregunta;
-        Guia = guia;
-        Puntos = puntos;
+        this.Pregunta = pregunta;
+        this.RespCorrecta = respCorrecta;
+        this.RespIncorrecta1 = respIncorrecta1;
+        this.RespIncorrecta2 = respIncorrecta2;
+        this.RespIncorrecta3 = respIncorrecta3;
+        this.TipoPregunta = tipoPregunta;
+        this.Guia = guia;
+        this.Puntos = puntos;
     }
+
+
 
     public Integer getId() {
         return id;
