@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onRestart() {
+        CrearRecycler();
+        super.onRestart();
+    }
+
     private void CrearRecycler() {
         conn = new ConexionSQLiteHelper(getApplicationContext(),"preguntas", null,1);
         listPreguntas = new ArrayList<>();
@@ -114,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     }else{
-                        Toast.makeText(getApplicationContext(), "Oportunidad Completa", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
                     }
                     /*
                     Toast.makeText(getApplicationContext(),
@@ -148,11 +154,18 @@ public class MainActivity extends AppCompatActivity {
     public void CargarBd() {
 
         Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,0);
-        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,150);
-        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,5);
+        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,1500);
         Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,500000);
         Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(8, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(9, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(10, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(11, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+
+
 
         GuardarPref();
     }
