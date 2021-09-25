@@ -1,6 +1,8 @@
 package com.example.recorriendolahistoria.entidades;
 
-public class Preguntas {
+import java.io.Serializable;
+
+public class Preguntas implements Serializable {
 
     private Integer id;
     private String Pregunta;

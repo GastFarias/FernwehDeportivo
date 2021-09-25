@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -71,9 +72,55 @@ public class MainActivity extends AppCompatActivity {
             adapter.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    String enviarID = listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId().toString();
+                    Preguntas pregCurso = new Preguntas(null,null,null,null,null,null,null,null,null);
+                    SQLiteDatabase db = conn.getReadableDatabase();
+                    Cursor cursor = db.rawQuery
+                            ("Select * from "+Utilidades.TABLA_PREGUNTAS +
+                                    " where " + Utilidades.CAMPO_ID + "=? ", new String[]{enviarID});
+                    cursor.moveToFirst();
+                    pregCurso.setId(cursor.getInt(0));
+                    pregCurso.setPregunta(cursor.getString(1));
+                    pregCurso.setRespCorrecta(cursor.getString(2));
+                    pregCurso.setRespIncorrecta1(cursor.getString(3));
+                    pregCurso.setRespIncorrecta2(cursor.getString(4));
+                    pregCurso.setRespIncorrecta3(cursor.getString(5));
+                    pregCurso.setTipoPregunta(cursor.getInt(6));
+                    pregCurso.setPuntos(cursor.getInt(8));
+
+
+
+                    if (pregCurso.getPuntos() == 0){
+                        Intent intent;
+                        
+                        switch (pregCurso.getTipoPregunta()){
+                            case 1:
+                                intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
+                                break;
+                            case 2:
+                                intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
+                                break;
+                            case 3:
+                                intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
+                                break;
+
+                            default:
+                                throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
+                        }
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("PreguntaEnCurso", pregCurso);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+
+
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Oportunidad Completa", Toast.LENGTH_SHORT).show();
+                    }
+                    /*
                     Toast.makeText(getApplicationContext(),
                             "Seleccionado" + listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId(),
                             Toast.LENGTH_SHORT).show();
+                            */
                 }
             });
 
@@ -100,10 +147,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void CargarBd() {
 
-        Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1,0);
+        Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,0);
         Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,150);
         Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,5);
-        Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1,1500);
+        Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,1500);
         Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,500000);
         Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
 
