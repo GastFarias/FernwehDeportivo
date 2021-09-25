@@ -1,13 +1,13 @@
 package com.example.recorriendolahistoria;
 
-import static android.graphics.Color.RED;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -18,8 +18,6 @@ import android.widget.Toast;
 import com.example.recorriendolahistoria.entidades.Preguntas;
 import com.example.recorriendolahistoria.utilidades.Utilidades;
 
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
 
@@ -32,8 +30,7 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
     String rCorrecta, rIncorrecta1, rIncorrecta2, rIncorrecta3, StrIdPreg;
     int idPreg;
     int puntajeActual = 4;
-    public String[] parametro;
-    public Preguntas EstaPreguntas;
+
 
 
     @Override
