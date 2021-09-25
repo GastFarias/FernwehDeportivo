@@ -10,6 +10,8 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.recorriendolahistoria.entidades.Preguntas;
 import com.example.recorriendolahistoria.utilidades.Utilidades;
@@ -65,7 +67,17 @@ public class MainActivity extends AppCompatActivity {
             listPreguntas.add(preguntas);
 
             AdaptadorRecyclerPreguntas adapter = new AdaptadorRecyclerPreguntas(listPreguntas);
-            recyclerViewPreguntas.setAdapter(adapter );
+
+            adapter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(),
+                            "Seleccionado" + listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId(),
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            recyclerViewPreguntas.setAdapter(adapter);
 
         }
     }
@@ -88,24 +100,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void CargarBd() {
 
-        Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1);
-        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2);
-        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3);
-        Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1);
-        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2);
-        Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3);
+        Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1,0);
+        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,150);
+        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,5);
+        Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", "no2", "no3", 1, 1,1500);
+        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,500000);
+        Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
 
         GuardarPref();
     }
 
-    private void Cargar(int id, String preg, String respC, String respI1, String respI2, String respI3, int tipo, int guia) {
+    private void Cargar(int id, String preg, String respC, String respI1, String respI2, String respI3, int tipo, int guia, int puntos) {
 
         ConexionSQLiteHelper conn = new ConexionSQLiteHelper(this, "preguntas", null, 1);
         SQLiteDatabase db = conn.getWritableDatabase();
 
-        //String insert = "INSERT INTO " + Utilidades.TABLA_PREGUNTAS" ( " + Utilidades.CAMPO_ID "," + Utilidades.CAMPO_PREGUNTA;
-
-        //db.execSQL(insert);
+        /*
+        String insert = "INSERT INTO " + Utilidades.TABLA_PREGUNTAS" ( " + Utilidades.CAMPO_ID "," + Utilidades.CAMPO_PREGUNTA;
+        db.execSQL(insert);
+        */
 
 
         ContentValues values = new ContentValues();
@@ -117,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         values.put(Utilidades.CAMPO_RESP_INCORRECTA3, respI3);
         values.put(Utilidades.CAMPO_TIPO_PREGUNTA, tipo);
         values.put(Utilidades.CAMPO_GUIA, guia);
+        values.put(Utilidades.CAMPO_PUNTOS,puntos);
 
         Long idResultante = db.insert(Utilidades.TABLA_PREGUNTAS, Utilidades.CAMPO_ID, values);
 
