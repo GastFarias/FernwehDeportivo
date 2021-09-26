@@ -41,9 +41,9 @@ public class AdaptadorRecyclerPreguntas
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPreguntas holder, int position) {
         String Spuntos = "";
-        int valor1estrella = 10;
-        int valor2estrella = 100;
-        int valor3estrella = 1000;
+        int valor1estrella = 2;
+        int valor2estrella = 20;
+        int valor3estrella = 40;
 
         //If para si no hay puntos se muestra el nombre de la guia
         if (listPreguntas.get(position).getPuntos() == 0){
@@ -58,7 +58,10 @@ public class AdaptadorRecyclerPreguntas
                     Spuntos = "Guia : Eugenia Navarro";
                     break;
             }
-        }else{
+        }
+        if (listPreguntas.get(position).getPuntos() == 1) Spuntos = "Respuesta Incorrecta";
+
+        else{
             Spuntos = "Puntos Obtenidos: "+listPreguntas.get(position).getPuntos().toString();
 
         }
@@ -97,12 +100,15 @@ public class AdaptadorRecyclerPreguntas
            switch (listPreguntas.get(position).getGuia()){
                case 1:
                    holder.imRes.setBackgroundResource(R.color.purple_200);
+                   holder.imRes.setImageResource(0);
                    break;
                case 2:
                    holder.imRes.setBackgroundResource(R.color.purple_500);
+                   holder.imRes.setImageResource(0);
                    break;
                case 3:
                    holder.imRes.setBackgroundResource(R.color.purple_700);
+                   holder.imRes.setImageResource(0);
                    break;
            }
         }

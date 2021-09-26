@@ -4,36 +4,9 @@
     <string name="Aceptar">Aceptar</string>
     <string name="PedirResultado">Pedir Resultado</string>
 
-    <string name="btnPreg1">Pregunta Nro 1</string>
-    <string name="btnPreg2">Pregunta Nro 2</string>
-    <string name="btnPreg3">Pregunta Nro 3</string>
-    <string name="btnPreg4">Pregunta Nro 4</string>
-    <string name="btnPreg5">Pregunta Nro 5</string>
-    <string name="btnPreg6">Pregunta Nro 6</string>
-    <string name="btnPreg7">Pregunta Nro 7</string>
-    <string name="btnPreg8">Pregunta Nro 8</string>
-    <string name="btnPreg9">Pregunta Nro 9</string>
-    <string name="btnPreg10">Pregunta Nro 10</string>
-    <string name="btnPreg11">Pregunta Nro 11</string>
-    <string name="btnPreg12">Pregunta Nro 12</string>
-    <string name="btnPreg13">Pregunta Nro 13</string>
-    <string name="btnPreg14">Pregunta Nro 14</string>
-    <string name="btnPreg15">Pregunta Nro 15</string>
-    <string name="btnPreg16">Pregunta Nro 16</string>
-    <string name="btnPreg17">Pregunta Nro 17</string>
-    <string name="btnPreg18">Pregunta Nro 18</string>
-    <string name="btnPreg19">Pregunta Nro 19</string>
-    <string name="btnPreg20">Pregunta Nro 20</string>
-    <string name="btnPreg21">Pregunta Nro 21</string>
-    <string name="btnPreg22">Pregunta Nro 22</string>
-    <string name="btnPreg23">Pregunta Nro 23</string>
-    <string name="btnPreg24">Pregunta Nro 24</string>
-    <string name="btnPreg25">Pregunta Nro 25</string>
-    <string name="btnPreg26">Pregunta Nro 26</string>
-    <string name="btnPreg27">Pregunta Nro 27</string>
-    <string name="btnPreg28">Pregunta Nro 28</string>
-    <string name="btnPreg29">Pregunta Nro 29</string>
-    <string name="btnPreg30">Pregunta Nro 30</string>
-
+    <string name="PreguntaDePrueba">La mismisima pregunta del verdadero o falso. necesito mas texto. pudrete flanders. pudrete flanders. </string>
+    <string name="Verdadero">Verdadero</string>
+    <string name="Falso">Falso</string>
+    <string name="tiempo_restante">Tiempo Restante</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.recorriendolahistoria;
 
 
+import static com.example.recorriendolahistoria.R.id.btn_respuesta3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +33,6 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
     int puntajeActual = 4;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +42,10 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
         Pregunta = findViewById(R.id.tv_pregunta);
         Opcion1 = findViewById(R.id.btn_respuesta1);
         Opcion2 = findViewById(R.id.btn_respuesta2);
-        Opcion3 = findViewById(R.id.btn_respuesta3);
+        Opcion3 = findViewById(btn_respuesta3);
         Opcion4 = findViewById(R.id.btn_respuesta4);
         StrIdPreg = String.valueOf(idPreg);
+
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
             Preguntas EstaPregunta = (Preguntas) bundle.get("PreguntaEnCurso");
@@ -198,21 +199,21 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                     actualizarPuntos();
                 }
                 if (Opcion2.getText() == rIncorrecta1) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
                     Opcion2.setText(" - - - - - - - - - -");
                     Opcion2.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion2.getText() == rIncorrecta2) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
                     Opcion2.setText(" - - - - - - - - - -");
                     Opcion2.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion2.getText() == rIncorrecta3) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor());
                     Opcion2.setText(" - - - - - - - - - -");
                     Opcion2.setClickable(false);
@@ -220,7 +221,7 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                 }
 
                 break;
-            case R.id.btn_respuesta3:
+            case btn_respuesta3:
                 if (Opcion3.getText() == rCorrecta) {
                     cuenta.cancel();
                     actualizarPuntos();

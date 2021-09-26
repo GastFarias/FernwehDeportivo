@@ -153,10 +153,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void CargarBd() {
 
-        Cargar(1, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,0);
+        Cargar(1, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
         Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(4, "Pregunta de prueba1?", "Si señor", "no1", null, null, 1, 1,1500);
+        Cargar(4, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
         Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,500000);
         Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
@@ -164,7 +164,14 @@ public class MainActivity extends AppCompatActivity {
         Cargar(9, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(10, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(11, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-
+        Cargar(12, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
+        Cargar(13, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
+        Cargar(14, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
+        Cargar(15, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
+        Cargar(16, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
+        Cargar(17, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
+        Cargar(18, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
+        Cargar(19, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
 
 
         GuardarPref();

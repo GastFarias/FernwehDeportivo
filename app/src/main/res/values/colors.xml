@@ -11,7 +11,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
     <color name="verde">#30971E</color>
+    <color name="verde_oscuro_Verdadero">#183E1A</color>
     <color name="rojo">#A60404</color>
+    <color name="rojo_oscuro_Falso">#530C0C</color>
     <color name="gris">#646464</color>
 
 </resources>
