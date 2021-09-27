@@ -61,10 +61,12 @@ public class AdaptadorRecyclerPreguntas
         }
         if (listPreguntas.get(position).getPuntos() == 1) Spuntos = "Respuesta Incorrecta";
 
-        else{
+        if (listPreguntas.get(position).getPuntos() > 1){
             Spuntos = "Puntos Obtenidos: "+listPreguntas.get(position).getPuntos().toString();
-
         }
+
+
+
         holder.puntos.setText(Spuntos);
 
        //Pinta la pregunta del color de la guia

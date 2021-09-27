@@ -4,16 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/lila_claro"
     tools:context=".ActivityPreguntasOpcionesImagenes">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_Tiempo_Imag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="opciones imagenes "
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Tiempo Restante "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp">
+
+        <TextView
+            android:id="@+id/tv_pregunta_Imag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:text="Donde se encuentra esta pregunta de prueba y
+                            poque estoy escribiendo esta boludes??"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            app:srcCompat="@drawable/_0202939" />
+
+        <LinearLayout
+            android:id="@+id/layout_btn_Imag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_opcion1_Imag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="OnClick"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/btn_opcion2_Imag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="OnClick"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/btn_opcion3_Imag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="OnClick"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/btn_opcion4_Imag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="OnClick"
+                android:text="Button" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

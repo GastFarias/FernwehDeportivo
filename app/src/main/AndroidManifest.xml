@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReCorriendoLaHistoria">
         <activity
+            android:name=".ActivityFormularioParaResultado"
+            android:exported="true" />
+        <activity
             android:name=".ActivityPreguntasOpcionesImagenes"
             android:exported="true" />
         <activity

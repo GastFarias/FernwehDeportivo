@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(4, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,500000);
+        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
         Cargar(8, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
@@ -172,6 +173,14 @@ public class MainActivity extends AppCompatActivity {
         Cargar(17, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
         Cargar(18, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
         Cargar(19, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
+        Cargar(20,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(21,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(22,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(23,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(24,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(25,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(26,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(27,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
 
 
         GuardarPref();
@@ -204,4 +213,72 @@ public class MainActivity extends AppCompatActivity {
 
         db.close();
     }
+    int puntAcumulado = 0, correctasAcumuladas = 0, incorrectasAcumuladas = 0;
+    float promedio = 0;
+    public void OnClickCargarResultado(View view) {
+        int puntDB = 1;
+        boolean band = false;
+
+        SQLiteDatabase db = conn.getReadableDatabase();
+        Cursor cursor = db.rawQuery("Select * from " + Utilidades.TABLA_PREGUNTAS, null);
+
+        while (cursor.moveToNext()) {
+            puntDB = cursor.getInt(8);
+            puntAcumulado = puntAcumulado + puntDB;
+            if (puntDB == 1) incorrectasAcumuladas++;
+            if (puntDB > 1) correctasAcumuladas++;
+            promedio = (float) puntAcumulado / (incorrectasAcumuladas + correctasAcumuladas);
+
+            if (puntDB == 0) {
+                band = true;
+            }
+        }
+        if (!band){
+            Toast.makeText(getApplicationContext(), "Puede pasar al resultado", Toast.LENGTH_SHORT).show();
+            IrAlResultado();
+        }
+
+        if (band) {
+            Toast.makeText(getApplicationContext(), "Faltan Preguntas de responder", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void IrAlResultado() {
+        Intent intent;
+        intent = new Intent(MainActivity.this, ActivityFormularioParaResultado.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("Puntos acumulados", puntAcumulado);
+        bundle.putInt("Incorrectas Acumuladas", incorrectasAcumuladas);
+        bundle.putInt("Correctas Acumuladas", correctasAcumuladas);
+        bundle.putFloat("Promedio",promedio);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
