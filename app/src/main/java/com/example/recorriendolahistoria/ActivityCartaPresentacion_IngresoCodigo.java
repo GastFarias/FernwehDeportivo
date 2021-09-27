@@ -69,10 +69,13 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
             if (bolValen == 1 || bolEuge == 1 || bolBrune == 1){
                 Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
                 startActivity(intent);
+            }else {
+                Toast.makeText(getApplicationContext(), "Por Favor Ingrese un Codigo de Guia", Toast.LENGTH_SHORT).show();
             }
+            
         }
 
-
+        CodigoIngresado.setText("");
     }
 
 

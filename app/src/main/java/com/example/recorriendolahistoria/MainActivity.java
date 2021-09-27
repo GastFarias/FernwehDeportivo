@@ -67,13 +67,54 @@ public class MainActivity extends AppCompatActivity {
         Preguntas preguntas = null;
         Cursor cursor = db.rawQuery("Select * from "+Utilidades.TABLA_PREGUNTAS,null);
         while (cursor.moveToNext()){
-            preguntas = new Preguntas(null,null,null,
+
+            SharedPreferences preferences = getSharedPreferences("Codigos", Context.MODE_PRIVATE);
+            int bolValen = preferences.getInt("Valen", 0);
+            int bolEuge = preferences.getInt("Euge", 0);
+            int bolBrune = preferences.getInt("Brune", 0);
+            switch (cursor.getInt(7)){
+                case 1:
+                    if (bolEuge == 1){
+                        preguntas = new Preguntas(null,null,null,
+                                null,null,null,null,null,null);
+                        preguntas.setId(cursor.getInt(0));
+                        preguntas.setGuia(cursor.getInt(7));
+                        preguntas.setPuntos(cursor.getInt(8));
+
+                        listPreguntas.add(preguntas);
+                    }
+                    break;
+                case 2:
+                    if (bolBrune == 1){
+                        preguntas = new Preguntas(null,null,null,
+                                null,null,null,null,null,null);
+                        preguntas.setId(cursor.getInt(0));
+                        preguntas.setGuia(cursor.getInt(7));
+                        preguntas.setPuntos(cursor.getInt(8));
+
+                        listPreguntas.add(preguntas);
+                    }
+                    break;
+                case 3:
+                    if (bolValen == 1){
+                        preguntas = new Preguntas(null,null,null,
+                                null,null,null,null,null,null);
+                        preguntas.setId(cursor.getInt(0));
+                        preguntas.setGuia(cursor.getInt(7));
+                        preguntas.setPuntos(cursor.getInt(8));
+
+                        listPreguntas.add(preguntas);
+                    }
+                    break;
+            }
+
+          /*  preguntas = new Preguntas(null,null,null,
                     null,null,null,null,null,null);
             preguntas.setId(cursor.getInt(0));
             preguntas.setGuia(cursor.getInt(7));
             preguntas.setPuntos(cursor.getInt(8));
 
-            listPreguntas.add(preguntas);
+            listPreguntas.add(preguntas);*/
 
             AdaptadorRecyclerPreguntas adapter = new AdaptadorRecyclerPreguntas(listPreguntas);
 
@@ -209,37 +250,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
-                    /*if (pregCurso.getPuntos() == 0){
-                        Intent intent;
 
-                        switch (pregCurso.getTipoPregunta()){
-                            case 1:
-                                intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
-                                break;
-                            case 2:
-                                intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
-                                break;
-                            case 3:
-                                intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
-                                break;
-
-                            default:
-                                throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
-                        }
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("PreguntaEnCurso", pregCurso);
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-
-
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
-                    }*/
-                    /*
-                    Toast.makeText(getApplicationContext(),
-                            "Seleccionado" + listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId(),
-                            Toast.LENGTH_SHORT).show();
-                            */
                 }
 
             });
@@ -249,34 +260,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-    /*private void Viajar(){
-        if (pregCurso.getPuntos() == 0){
-            Intent intent;
-
-            switch (pregCurso.getTipoPregunta()){
-                case 1:
-                    intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
-                    break;
-                case 2:
-                    intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
-                    break;
-                case 3:
-                    intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
-                    break;
-
-                default:
-                    throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
-            }
-            Bundle bundle = new Bundle();
-            bundle.putSerializable("PreguntaEnCurso", pregCurso);
-            intent.putExtras(bundle);
-            startActivity(intent);
-
-
-        }else{
-            Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
-        }
-    }*/
 
 
     private void CheckBase() {
@@ -402,7 +385,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    public void IrCodigo(View view){
+        Intent intent = new Intent(MainActivity.this,ActivityCartaPresentacion_IngresoCodigo.class);
+        startActivity(intent);
+        finish();
+    }
 }
 
 
