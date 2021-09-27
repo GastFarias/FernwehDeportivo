@@ -2,7 +2,6 @@ package com.example.recorriendolahistoria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -21,6 +20,7 @@ public class ActivityPreguntaVerdaderoFalso extends AppCompatActivity {
     Button btnVerdadero, btnFalso;
     String rCorrectaVF, rIncorrectaVF;
     int puntajeActual = 4 ;
+    String justificativo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class ActivityPreguntaVerdaderoFalso extends AppCompatActivity {
             pregunta.setText(EstaPregunta.getPregunta());
             rCorrectaVF = EstaPregunta.getRespCorrecta();
             rIncorrectaVF = EstaPregunta.getRespIncorrecta1();
+            justificativo = EstaPregunta.getRespIncorrecta2();
         }
         iniciarCuentaRegresiva();
     }
@@ -109,7 +110,7 @@ public class ActivityPreguntaVerdaderoFalso extends AppCompatActivity {
             actualizarPuntos();
         }
         if (btnFalso.getText().toString().equals(rIncorrectaVF)) {
-            Toast.makeText(getApplicationContext(), "Respuesta Incorrecta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), justificativo, Toast.LENGTH_LONG).show();
             cuenta.cancel();
             puntajeActual = 1;
             actualizarPuntos();

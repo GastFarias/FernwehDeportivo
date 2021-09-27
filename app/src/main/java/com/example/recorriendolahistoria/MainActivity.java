@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    Preguntas pregCurso = new Preguntas(null,null,null,null,null,null,null,null,null);
 
     private void ConsultarListaPreguntas() {
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -93,13 +94,124 @@ public class MainActivity extends AppCompatActivity {
                     pregCurso.setRespIncorrecta2(cursor.getString(4));
                     pregCurso.setRespIncorrecta3(cursor.getString(5));
                     pregCurso.setTipoPregunta(cursor.getInt(6));
+                    pregCurso.setGuia(cursor.getInt(7));
                     pregCurso.setPuntos(cursor.getInt(8));
 
 
+                    SharedPreferences preferences = getSharedPreferences("Codigos", Context.MODE_PRIVATE);
+                    int bolValen = preferences.getInt("Valen", 0);
+                    int bolEuge = preferences.getInt("Euge", 0);
+                    int bolBrune = preferences.getInt("Brune", 0);
+                    switch (pregCurso.getGuia()){
+                        case 1:
+                            if (bolEuge == 1){
+                                    if (pregCurso.getPuntos() == 0){
+                                        Intent intent;
 
-                    if (pregCurso.getPuntos() == 0){
+                                        switch (pregCurso.getTipoPregunta()){
+                                            case 1:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
+                                                break;
+                                            case 2:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
+                                                break;
+                                            case 3:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
+                                                break;
+
+                                            default:
+                                                throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
+                                        }
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("PreguntaEnCurso", pregCurso);
+                                        intent.putExtras(bundle);
+                                        startActivity(intent);
+
+
+                                    }else{
+                                        Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                            if (bolEuge == 0){
+                                Toast.makeText(getApplicationContext(), "Es Necesario el codigo de Guia ", Toast.LENGTH_LONG).show();
+                            }
+                            break;
+                        case 2:
+                            if (bolBrune == 1){
+
+                                    if (pregCurso.getPuntos() == 0){
+                                        Intent intent;
+
+                                        switch (pregCurso.getTipoPregunta()){
+                                            case 1:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
+                                                break;
+                                            case 2:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
+                                                break;
+                                            case 3:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
+                                                break;
+
+                                            default:
+                                                throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
+                                        }
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("PreguntaEnCurso", pregCurso);
+                                        intent.putExtras(bundle);
+                                        startActivity(intent);
+
+
+                                    }else{
+                                        Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
+                                    }
+
+                            }
+                            if (bolBrune == 0){
+                                Toast.makeText(getApplicationContext(), "Es Necesario el codigo de Guia ", Toast.LENGTH_LONG).show();
+                            }
+                            break;
+                        case 3:
+                            if (bolValen == 1){
+                                    if (pregCurso.getPuntos() == 0){
+                                        Intent intent;
+
+                                        switch (pregCurso.getTipoPregunta()){
+                                            case 1:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
+                                                break;
+                                            case 2:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
+                                                break;
+                                            case 3:
+                                                intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
+                                                break;
+
+                                            default:
+                                                throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
+                                        }
+                                        Bundle bundle = new Bundle();
+                                        bundle.putSerializable("PreguntaEnCurso", pregCurso);
+                                        intent.putExtras(bundle);
+                                        startActivity(intent);
+
+
+                                    }else{
+                                        Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
+                                    }
+
+                            }
+                            if (bolValen == 0){
+                                Toast.makeText(getApplicationContext(), "Es Necesario el codigo de Guia ", Toast.LENGTH_LONG).show();
+                            }
+                            break;
+                    }
+
+
+                    /*if (pregCurso.getPuntos() == 0){
                         Intent intent;
-                        
+
                         switch (pregCurso.getTipoPregunta()){
                             case 1:
                                 intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
@@ -122,19 +234,50 @@ public class MainActivity extends AppCompatActivity {
 
                     }else{
                         Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
-                    }
+                    }*/
                     /*
                     Toast.makeText(getApplicationContext(),
                             "Seleccionado" + listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId(),
                             Toast.LENGTH_SHORT).show();
                             */
                 }
+
             });
+
 
             recyclerViewPreguntas.setAdapter(adapter);
 
         }
     }
+    /*private void Viajar(){
+        if (pregCurso.getPuntos() == 0){
+            Intent intent;
+
+            switch (pregCurso.getTipoPregunta()){
+                case 1:
+                    intent = new Intent(MainActivity.this,ActivityPreguntaVerdaderoFalso.class);
+                    break;
+                case 2:
+                    intent = new Intent(MainActivity.this,ActivityPreguntaOpcionesTexto.class);
+                    break;
+                case 3:
+                    intent = new Intent(MainActivity.this,ActivityPreguntasOpcionesImagenes.class);
+                    break;
+
+                default:
+                    throw new IllegalStateException("Unexpected value: " + pregCurso.getTipoPregunta());
+            }
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("PreguntaEnCurso", pregCurso);
+            intent.putExtras(bundle);
+            startActivity(intent);
+
+
+        }else{
+            Toast.makeText(getApplicationContext(), "Oportunidad Utilizada", Toast.LENGTH_SHORT).show();
+        }
+    }*/
+
 
     private void CheckBase() {
         SharedPreferences preferencias = getSharedPreferences("NGuardado", Context.MODE_PRIVATE);
@@ -154,26 +297,26 @@ public class MainActivity extends AppCompatActivity {
 
     public void CargarBd() {
 
-        Cargar(1, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
-        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(1, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 1,0);
+        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
+        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,1,0);
         Cargar(4, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(8, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(9, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(10, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
+        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
+        Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,1,0);
+        Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
+        Cargar(8, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
+        Cargar(9, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
+        Cargar(10, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
         Cargar(11, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(12, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
-        Cargar(13, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(14, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
-        Cargar(15, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(16, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
-        Cargar(17, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(18, "Pregunta de prueba1?", "Verdadero", "Falso", null, null, 1, 1,0);
-        Cargar(19, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(20,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
+        Cargar(12, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
+        Cargar(13, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
+        Cargar(14, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
+        Cargar(15, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
+        Cargar(16, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
+        Cargar(17, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
+        Cargar(18, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
+        Cargar(19, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
+        Cargar(20,"Preg pueba 3","Correcta","no1","no2","no3",3,2,0);
         Cargar(21,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(22,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(23,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
@@ -181,7 +324,9 @@ public class MainActivity extends AppCompatActivity {
         Cargar(25,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(26,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
         Cargar(27,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-
+        Cargar(28, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
+        Cargar(29, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
+        Cargar(30, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
 
         GuardarPref();
     }
