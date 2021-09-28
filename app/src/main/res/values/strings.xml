@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Re Corriendo La Historia</string>
+    <string name="app_name">Fernweh Deportivo</string>
     <string name="edText_itrCodigo">Introducir Codigo</string>
     <string name="Aceptar">Aceptar</string>
     <string name="PedirResultado">Pedir Resultado</string>
@@ -8,5 +8,14 @@
     <string name="Verdadero">Verdadero</string>
     <string name="Falso">Falso</string>
     <string name="tiempo_restante">Tiempo Restante</string>
+    <string name="cartaEntrada">Hola a todos y bienvenidos a nuestra aplicación! Somos el grupo de Fernweh deportivo que pensamos en esta divertida forma para ponernos a entrenar los cerebros.
+
+Para ingresar, mañana les daremos los códigos especiales de guías
+
+¡ Muchas Gracias por elegirnos !</string>
     <string name="HintCodigo">Ingrese El Codigo de Guia</string>
 </resources>
+
+
+
+

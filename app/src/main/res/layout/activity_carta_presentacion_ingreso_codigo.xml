@@ -22,10 +22,11 @@
                 android:id="@+id/tvCartaPrecentacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text='Carta de presentacion y muchas otras cosas mas. quedense con nosotros para ver los simpsons y muchas cosas mas como "a la grande le puse cuca" y el legendario "este es el barrio chino"'
+                android:layout_marginBottom="15sp"
+                android:text="@string/cartaEntrada"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="34sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <EditText

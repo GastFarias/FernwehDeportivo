@@ -97,7 +97,7 @@ public class ActivityPreguntaVerdaderoFalso extends AppCompatActivity {
             actualizarPuntos();
         }
         if (btnVerdadero.getText().toString().equals(rIncorrectaVF)) {
-            Toast.makeText(getApplicationContext(), "Respuesta Incorrecta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), justificativo, Toast.LENGTH_LONG).show();
             cuenta.cancel();
             puntajeActual = 1;
             actualizarPuntos();

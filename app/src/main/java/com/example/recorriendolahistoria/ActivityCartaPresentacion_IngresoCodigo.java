@@ -17,6 +17,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
     Button btnIngresar;
     String CodigoValen = "3004", CodigoEuge = "1512", CodigoBrunella = "2407";
     int bolValen = 0, bolEuge = 0, bolBrune = 0;
+    TextView tv_carta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
 
         CodigoIngresado = findViewById(R.id.et_Codigo);
         btnIngresar = findViewById(R.id.btnSiguiente);
+        tv_carta = findViewById(R.id.tvCartaPrecentacion);
 
         SharedPreferences preferences = getSharedPreferences("Codigos", Context.MODE_PRIVATE);
         bolValen = preferences.getInt("Valen", 0);
@@ -33,6 +35,9 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
         if (bolValen == 1 || bolEuge == 1 || bolBrune == 1){
             btnIngresar.setText("Ingresar");
         }
+        tv_carta.setText("Hola a todos y bienvenidos a nuestra aplicación!" +
+                " Somos el grupo de Fernweh deportivo que pensamos en esta divertida forma para ponernos a entrenar los cerebros. " +
+                "\n\n   Para ingresar, mañana les daremos los códigos especiales de guías \n\n   ¡Muchas Gracias por elegirnos !");
 
     }
     public void OnClick(View view){

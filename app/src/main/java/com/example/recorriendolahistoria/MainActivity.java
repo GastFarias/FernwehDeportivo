@@ -313,10 +313,10 @@ public class MainActivity extends AppCompatActivity {
         Cargar(9, "¿El mini golf comenzó como un deporte únicamente femenino?", "Verdadero", "Falso", null,
                 null, 1, 2,0);
 
-        Cargar(10, "¿Qué representan las siglas CONAE?", "Ccomisión Nacional de Actividades Espaciales",
+        Cargar(10, "¿Qué representan las siglas CONAE?", "Comisión Nacional de Actividades Espaciales",
                 "Complejo Nacional Espacial", "Centro Nacional Espacial", "Comisión Nacional Espacial", 2, 2,0);
 
-        Cargar(11, "¿Cuál es el origen del golf?", "Romano", "Escocés", "Escocés", "Alemán", 2, 2,0);
+        Cargar(11, "¿Cuál es el origen del golf?", "Romano", "Francés", "Escocés", "Alemán", 2, 2,0);
 
         Cargar(12, "El primer circuito de \"rally\" semipermanente se hizo en...", "Pro Racing", "Circuito Costanera",
                 "Parque Temático", "Centro de Villa Carlos Paz", 2, 2,0);
@@ -351,10 +351,11 @@ public class MainActivity extends AppCompatActivity {
         Cargar(20," Los años lo han cambiado... ¿Qué puente de la famosa Ciudad de los puentes es?","Puente Negro",
                 "Puente Las Mojarras","Puente Carretero","Puente Carena",3,3,0);
 
-        Cargar(21,"El Shakedown es un tramo clasificatorio del Rally","Falso","Verdadero","Es un tramo de prueba técnica",
-                null,1,3,0);
+        Cargar(21,"El Shakedown es un tramo clasificatorio del Rally","Falso","Verdadero",
+                "Es un tramo de prueba técnica", null,1,3,0);
 
-        Cargar(22,"Estancia Vieja fue de los primeros pueblos de la zona en poblarse, de allí su nombre","Falso","Verdadero",
+        Cargar(22,"Estancia Vieja fue de los primeros pueblos de la zona en poblarse, de allí su nombre","Falso",
+                "Verdadero",
                 "La comuna de Estancia Vieja tiene recien 46 años. Su nombre es por el casco de la estancia, con una fachada muy antigua.",
                 null,1,3,0);
 

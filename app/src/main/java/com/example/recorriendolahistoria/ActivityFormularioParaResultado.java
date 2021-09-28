@@ -16,7 +16,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
     String Promedio, Correctas, Incorrectas, PuntosAcum;
     Boolean etPrendido;
     int puntosTraidos;
-    int puntosExtra = 500000;
+    int puntosExtra = 140;
     String codigo = "0110";
 
     TextView tvProm, tvCorr, tvInc, tvPuntAcu, cartelPuntos;
