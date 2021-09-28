@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
 
 
     TextView Pregunta_OpImg, TvTiempo_OpImg;
+    ImageView imageView;
     Button Opcion1_OpImg;
     Button Opcion2_OpImg;
     Button Opcion3_OpImg;
@@ -30,6 +32,7 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
     String rCorrecta_OpImg, rIncorrecta1_OpImg, rIncorrecta2_OpImg, rIncorrecta3_OpImg, StrIdPreg_OpImg;
     int idPreg_OpImg;
     int puntajeActual_OpImg = 4;
+    int IDPreg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
         Opcion3_OpImg = findViewById(R.id.btn_opcion3_Imag);
         Opcion4_OpImg = findViewById(R.id.btn_opcion4_Imag);
         StrIdPreg_OpImg = String.valueOf(idPreg_OpImg);
+        imageView = findViewById(R.id.imageView);
 
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
@@ -52,7 +56,7 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
             rIncorrecta1_OpImg = EstaPregunta.getRespIncorrecta1();
             rIncorrecta2_OpImg = EstaPregunta.getRespIncorrecta2();
             rIncorrecta3_OpImg = EstaPregunta.getRespIncorrecta3();
-
+            IDPreg = EstaPregunta.getId();
         }
         int oCor, oInc1 = 0, oInc2 = 0, oInc3 = 0;
         oCor = (int) (Math.random() * 4) + 1;
@@ -122,9 +126,19 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
                 Opcion4_OpImg.setText(rIncorrecta3_OpImg);
                 break;
         }
-
+        ColocarImagen();
         iniciarCuentaRegresiva();
     }
+
+    private void ColocarImagen() {
+        switch (IDPreg) {
+            case 3:
+                imageView.setImageResource(R.drawable._dos_removebg_preview__2_);
+                break;
+
+        }
+    }
+
     int tiempoRestante_Img;
     CountDownTimer cuenta;
 

@@ -16,4 +16,8 @@
     <color name="rojo_oscuro_Falso">#530C0C</color>
     <color name="gris">#646464</color>
 
+    <color name="lilaP1">#D8BBFC</color>
+    <color name="lilaP2">#AF6EFF</color>
+    <color name="lilaP3">#C5AAE6</color>
+
 </resources>

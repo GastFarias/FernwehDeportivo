@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase db = conn.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from " + Utilidades.TABLA_PREGUNTAS, null);
-
+        puntAcumulado = 0;
         while (cursor.moveToNext()) {
             puntDB = cursor.getInt(8);
             puntAcumulado = puntAcumulado + puntDB;
@@ -362,12 +362,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if (!band){
-            Toast.makeText(getApplicationContext(), "Puede pasar al resultado", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(), "Puede pasar al resultado", Toast.LENGTH_SHORT).show();
             IrAlResultado();
         }
 
         if (band) {
-            Toast.makeText(getApplicationContext(), "Faltan Preguntas de responder", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Faltan Preguntas de Responder", Toast.LENGTH_LONG).show();
         }
     }
 
