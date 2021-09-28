@@ -15,7 +15,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
 
     TextView CodigoIngresado;
     Button btnIngresar;
-    String CodigoValen = "1111", CodigoEuge = "2222", CodigoBrunella = "3333";
+    String CodigoValen = "3004", CodigoEuge = "1512", CodigoBrunella = "2407";
     int bolValen = 0, bolEuge = 0, bolBrune = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
                 Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
                 startActivity(intent);
             }else {
-                Toast.makeText(getApplicationContext(), "Por Favor Ingrese un Codigo de Guia", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Por Favor Ingrese un Codigo de Guia ", Toast.LENGTH_SHORT).show();
             }
             
         }

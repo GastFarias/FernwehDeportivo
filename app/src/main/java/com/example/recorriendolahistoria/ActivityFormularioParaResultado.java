@@ -17,7 +17,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
     Boolean etPrendido;
     int puntosTraidos;
     int puntosExtra = 500000;
-    String codigo = "5555";
+    String codigo = "0110";
 
     TextView tvProm, tvCorr, tvInc, tvPuntAcu, cartelPuntos;
     EditText et_IngresoCodigo;
@@ -34,7 +34,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
         Correctas = "Preguntas Correctas: " + bundle.get("Correctas Acumuladas").toString();
         Incorrectas = "Preguntas Incorrectas: " + bundle.get("Incorrectas Acumuladas").toString();
         puntosTraidos = (int) bundle.get("Puntos acumulados");
-        PuntosAcum = "Acumulaste " + puntosTraidos + "Puntos";
+        PuntosAcum = "Acumulaste " + puntosTraidos + " Puntos";
 
 
         tvProm = findViewById(R.id.tvPromedio);
@@ -58,7 +58,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
         CheckBonus();
         if (guardado == 1){
             int pFinal = puntosTraidos + puntosExtra;
-            PuntosAcum = "Acumulaste " + pFinal + "Puntos";
+            PuntosAcum = "Acumulaste " + pFinal + " Puntos";
             tvPuntAcu.setText(PuntosAcum);
         }
     }
@@ -77,7 +77,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
             String CodigoIngresado = String.valueOf(et_IngresoCodigo.getText());
 
             if(!CodigoIngresado.equals(codigo) && CodigoIngresado != null) {
-                Toast.makeText(getApplicationContext(), "Codigo Incorrecto", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Codigo Incorrecto ", Toast.LENGTH_SHORT).show();
                 et_IngresoCodigo.setAlpha(0);
                 et_IngresoCodigo.setText("");
                 et_IngresoCodigo.setClickable(false);
@@ -102,7 +102,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
                     cartelPuntos.setText("¡ ¡ ¡ ¡ EXELENTE! ! ! ! Ganaste " + puntosExtra + " puntos extra");
                     cartelPuntos.setAlpha(1);
                     int pFinal = puntosTraidos + puntosExtra;
-                    PuntosAcum = "Acumulaste " + pFinal + "Puntos";
+                    PuntosAcum = "Acumulaste " + pFinal + " Puntos";
                     tvPuntAcu.setText(PuntosAcum);
 
                     SharedPreferences preferencias = getSharedPreferences("CodigoUsado", Context.MODE_PRIVATE);

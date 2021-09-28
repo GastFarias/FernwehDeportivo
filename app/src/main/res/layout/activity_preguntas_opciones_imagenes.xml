@@ -20,70 +20,73 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_0202939" />
+
     <LinearLayout
+        android:id="@+id/layout_btn_Imag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10sp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="15dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tv_pregunta_Imag"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center|center_horizontal"
-            android:text="Donde se encuentra esta pregunta de prueba y
-                            poque estoy escribiendo esta boludes??"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:foregroundGravity="center"
-            app:srcCompat="@drawable/_0202939" />
-
-        <LinearLayout
-            android:id="@+id/layout_btn_Imag"
+        <Button
+            android:id="@+id/btn_opcion1_Imag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:onClick="OnClick"
+            android:text="Button" />
 
-            <Button
-                android:id="@+id/btn_opcion1_Imag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="OnClick"
-                android:text="Button" />
+        <Button
+            android:id="@+id/btn_opcion2_Imag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"
+            android:text="Button" />
 
-            <Button
-                android:id="@+id/btn_opcion2_Imag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="OnClick"
-                android:text="Button" />
+        <Button
+            android:id="@+id/btn_opcion3_Imag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"
+            android:text="Button" />
 
-            <Button
-                android:id="@+id/btn_opcion3_Imag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="OnClick"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/btn_opcion4_Imag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="OnClick"
-                android:text="Button" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_opcion4_Imag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"
+            android:text="Button" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_pregunta_Imag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center|center_horizontal"
+        android:text="Donde se encuentra esta pregunta de prueba y
+                        poque estoy escribiendo esta boludes??"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Tiempo_Imag" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

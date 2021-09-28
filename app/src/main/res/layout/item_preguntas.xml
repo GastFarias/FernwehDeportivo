@@ -42,13 +42,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:alpha="1"
-            android:contentDescription="@string/app_name" />
+            android:contentDescription="@string/app_name"
+            android:fitsSystemWindows="false" />
 
     </LinearLayout>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="11sp"
+        android:layout_height="5sp"
         android:background="@color/gris" />
 </androidx.appcompat.widget.LinearLayoutCompat>

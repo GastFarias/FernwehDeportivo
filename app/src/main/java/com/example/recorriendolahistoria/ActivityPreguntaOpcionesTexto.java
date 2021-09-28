@@ -147,7 +147,7 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Toast.makeText(getApplicationContext(), "Tiempo Finalizado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Tiempo Finalizado ", Toast.LENGTH_SHORT).show();
                 tiempoRestante = 1;
                 puntajeActual = 1;
                 actualizarPuntos();
@@ -169,23 +169,23 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                     actualizarPuntos();
                 }
                 if (Opcion1.getText() == rIncorrecta1) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta ", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1.setText(" - - - - - - - - - -");
+                    Opcion1.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion1.getText() == rIncorrecta2) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta ", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1.setText(" - - - - - - - - - -");
+                    Opcion1.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion1.getText() == rIncorrecta3) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta ", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1.setText(" - - - - - - - - - -");
+                    Opcion1.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1.setClickable(false);
                     puntajeActual--;
                 }
@@ -201,21 +201,21 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                 if (Opcion2.getText() == rIncorrecta1) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
-                    Opcion2.setText(" - - - - - - - - - -");
+                    Opcion2.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion2.getText() == rIncorrecta2) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
-                    Opcion2.setText(" - - - - - - - - - -");
+                    Opcion2.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion2.getText() == rIncorrecta3) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor());
-                    Opcion2.setText(" - - - - - - - - - -");
+                    Opcion2.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2.setClickable(false);
                     puntajeActual--;
                 }
@@ -228,23 +228,23 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Respuesta correcta", Toast.LENGTH_SHORT).show();
                 }
                 if (Opcion3.getText() == rIncorrecta1) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion3.setBackgroundColor(RED);
-                    Opcion3.setText(" - - - - - - - - - -");
+                    Opcion3.setText(" - - - - - - - - - - - - - - - ");
                     Opcion3.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion3.getText() == rIncorrecta2) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion3.setBackgroundColor(RED);
-                    Opcion3.setText(" - - - - - - - - - -");
+                    Opcion3.setText(" - - - - - - - - - - - - - - - ");
                     Opcion3.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion3.getText() == rIncorrecta3) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion3.setBackgroundColor(RED);
-                    Opcion3.setText(" - - - - - - - - - -");
+                    Opcion3.setText(" - - - - - - - - - - - - - - - ");
                     Opcion3.setClickable(false);
                     puntajeActual--;
                 }
@@ -256,23 +256,23 @@ public class ActivityPreguntaOpcionesTexto extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Respuesta correcta", Toast.LENGTH_SHORT).show();
                 }
                 if (Opcion4.getText() == rIncorrecta1) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion4.setBackgroundColor(RED);
-                    Opcion4.setText(" - - - - - - - - - -");
+                    Opcion4.setText(" - - - - - - - - - - - - - - - ");
                     Opcion4.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion4.getText() == rIncorrecta2) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //    Opcion4.setBackgroundColor(RED);
-                    Opcion4.setText(" - - - - - - - - - -");
+                    Opcion4.setText(" - - - - - - - - - - - - - - - ");
                     Opcion4.setClickable(false);
                     puntajeActual--;
                 }
                 if (Opcion4.getText() == rIncorrecta3) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //   Opcion4.setBackgroundColor(RED);
-                    Opcion4.setText(" - - - - - - - - - -");
+                    Opcion4.setText(" - - - - - - - - - - - - - - - ");
                     Opcion4.setClickable(false);
                     puntajeActual--;
                 }

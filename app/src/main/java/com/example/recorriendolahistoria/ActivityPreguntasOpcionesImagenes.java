@@ -132,10 +132,12 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
 
     private void ColocarImagen() {
         switch (IDPreg) {
-            case 3:
-                imageView.setImageResource(R.drawable._dos_removebg_preview__2_);
+            case 8:
+                imageView.setImageResource(R.drawable.mineral);
                 break;
-
+            case 20:
+                imageView.setImageResource(R.drawable.puente);
+                break;
         }
     }
 
@@ -179,23 +181,23 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
                 }
 
                 if (Opcion1_OpImg.getText() == rIncorrecta1_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta ", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1_OpImg.setText(" - - - - - - - - - -");
+                    Opcion1_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion1_OpImg.getText() == rIncorrecta2_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1_OpImg.setText(" - - - - - - - - - -");
+                    Opcion1_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion1_OpImg.getText() == rIncorrecta3_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion1.setBackgroundResource(R.color.rojo);
-                    Opcion1_OpImg.setText(" - - - - - - - - - -");
+                    Opcion1_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion1_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
@@ -211,21 +213,21 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
                 if (Opcion2_OpImg.getText() == rIncorrecta1_OpImg) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
-                    Opcion2_OpImg.setText(" - - - - - - - - - -");
+                    Opcion2_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion2_OpImg.getText() == rIncorrecta2_OpImg) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor(Color.RED));
-                    Opcion2_OpImg.setText(" - - - - - - - - - -");
+                    Opcion2_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion2_OpImg.getText() == rIncorrecta3_OpImg) {
                     Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion2.setBackgroundColor(getResources().getColor());
-                    Opcion2_OpImg.setText(" - - - - - - - - - -");
+                    Opcion2_OpImg.setText(" - - - - - - - - - - - - - - - ");
                     Opcion2_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
@@ -238,23 +240,23 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Respuesta correcta", Toast.LENGTH_SHORT).show();
                 }
                 if (Opcion3_OpImg.getText() == rIncorrecta1_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //Opcion3.setBackgroundColor(RED);
-                    Opcion3_OpImg.setText(" - - - - - - - - - -");
+                    Opcion3_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion3_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion3_OpImg.getText() == rIncorrecta2_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion3.setBackgroundColor(RED);
-                    Opcion3_OpImg.setText(" - - - - - - - - - -");
+                    Opcion3_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion3_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion3_OpImg.getText() == rIncorrecta3_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion3.setBackgroundColor(RED);
-                    Opcion3_OpImg.setText(" - - - - - - - - - -");
+                    Opcion3_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion3_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
@@ -267,23 +269,23 @@ public class ActivityPreguntasOpcionesImagenes extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Respuesta correcta", Toast.LENGTH_SHORT).show();
                 }
                 if (Opcion4_OpImg.getText() == rIncorrecta1_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 1", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //  Opcion4.setBackgroundColor(RED);
-                    Opcion4_OpImg.setText(" - - - - - - - - - -");
+                    Opcion4_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion4_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion4_OpImg.getText() == rIncorrecta2_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 2", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //    Opcion4.setBackgroundColor(RED);
-                    Opcion4_OpImg.setText(" - - - - - - - - - -");
+                    Opcion4_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion4_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }
                 if (Opcion4_OpImg.getText() == rIncorrecta3_OpImg) {
-                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta 3", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Respuesta incorrecta", Toast.LENGTH_SHORT).show();
                     //   Opcion4.setBackgroundColor(RED);
-                    Opcion4_OpImg.setText(" - - - - - - - - - -");
+                    Opcion4_OpImg.setText(" - - - - - - - - - - - - - - -");
                     Opcion4_OpImg.setClickable(false);
                     puntajeActual_OpImg--;
                 }

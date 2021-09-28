@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    Preguntas pregCurso = new Preguntas(null,null,null,null,null,null,null,null,null);
+    Preguntas pregCurso = new Preguntas(null,null,null,null,
+            null,null,null,null,null);
 
     private void ConsultarListaPreguntas() {
         SQLiteDatabase db = conn.getReadableDatabase();
@@ -122,7 +123,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String enviarID = listPreguntas.get(recyclerViewPreguntas.getChildAdapterPosition(v)).getId().toString();
-                    Preguntas pregCurso = new Preguntas(null,null,null,null,null,null,null,null,null);
+                    Preguntas pregCurso = new Preguntas(null,null,null,null,
+                            null,null,null,null,null);
                     SQLiteDatabase db = conn.getReadableDatabase();
                     Cursor cursor = db.rawQuery
                             ("Select * from "+Utilidades.TABLA_PREGUNTAS +
@@ -280,36 +282,85 @@ public class MainActivity extends AppCompatActivity {
 
     public void CargarBd() {
 
-        Cargar(1, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 1,0);
-        Cargar(2, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(3,"Preg pueba 3","Correcta","no1","no2","no3",3,1,0);
-        Cargar(4, "Pregunta de prueba1?", "Falso", "Verdadero", null, null, 1, 1,0);
-        Cargar(5, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(6,"Preg pueba 3","Correcta","no1","no2","no3",3,1,0);
-        Cargar(7, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(8, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(9, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(10, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 1,0);
-        Cargar(11, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 2,0);
-        Cargar(12, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
-        Cargar(13, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
-        Cargar(14, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
-        Cargar(15, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
-        Cargar(16, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
-        Cargar(17, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
-        Cargar(18, "Pregunta de prueba1?", "Verdadero", "Falso", "no hay poque", null, 1, 2,0);
-        Cargar(19, "Pregunta de prueba1?", "Falso", "Verdadero", "no hay poque", null, 1, 2,0);
-        Cargar(20,"Preg pueba 3","Correcta","no1","no2","no3",3,2,0);
-        Cargar(21,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(22,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(23,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(24,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(25,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(26,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(27,"Preg pueba 3","Correcta","no1","no2","no3",3,3,0);
-        Cargar(28, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
-        Cargar(29, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
-        Cargar(30, "Pregunta de prueba2?", "Si señor2", "no12", "no22", "no32", 2, 3,0);
+        Cargar(1, "¿Cuáles son los tres puntos de desarrollo que impulsaron a la Ciudad de Villa Carlos Paz?",
+                "El automovilismo, la noche y los teatros", "El automovilismo, las rutas y los hoteles",
+                "La noche, los hoteles y el lago San Roque ", "El automovilismo, el lago y los teatros", 2, 1,0);
+
+        Cargar(2, "¿Quien creo la \"Semana de la Velocidad\"?", "Alcides Raies", "Jorge Descotte.",
+                "Oscar Alfredo Galvez", "Martin Cristi", 2, 1,0);
+
+        Cargar(3," ¿En 1950 se corre la primera carrera en Villa Carlos Paz?","Falso","Verdadero","Se corre en el año 1958"
+                ,null,1,1,0);
+
+        Cargar(4, "¿Quien era Martin Cristi?", "Navegante", "Piloto", "Coleccionista",
+                "Periodista deportivo", 2, 1,0);
+
+        Cargar(5, "Dentro del bar Héroes, ¿De quien es el motor que se encuentra dentro?", "Pechito Lopez", "Colo Rosso",
+                "Valentino Rossi", "Agustín Cannapino", 2, 1,0);
+
+
+
+        Cargar(6,"El observatorio Astronómico de Córdoba es el más grande de Sudamérica","Falso","Verdadero",
+                "El más grande se encuentra al norte de Chile",
+                null,1,2,0);
+
+        Cargar(7, "Los autos que hicieron la carrera del observatorio eran...", "Fiat 1", "Fiat 600", "Fiat 125",
+                "Fiat 128", 2, 2,0);
+
+        Cargar(8, "¿Qué mineral es el que se encuentra en la imagen?", "Feldespato", "Mica", "Berilio",
+                "Cuarzo", 3, 2,0);
+
+        Cargar(9, "¿El mini golf comenzó como un deporte únicamente femenino?", "Verdadero", "Falso", null,
+                null, 1, 2,0);
+
+        Cargar(10, "¿Qué representan las siglas CONAE?", "Ccomisión Nacional de Actividades Espaciales",
+                "Complejo Nacional Espacial", "Centro Nacional Espacial", "Comisión Nacional Espacial", 2, 2,0);
+
+        Cargar(11, "¿Cuál es el origen del golf?", "Romano", "Escocés", "Escocés", "Alemán", 2, 2,0);
+
+        Cargar(12, "El primer circuito de \"rally\" semipermanente se hizo en...", "Pro Racing", "Circuito Costanera",
+                "Parque Temático", "Centro de Villa Carlos Paz", 2, 2,0);
+
+
+
+        Cargar(13, "Sólo hay categoría masculina en el Rugby del Carlos Paz Rugby Club?", "Falso", "Verdadero",
+                "Hay una categoría femenina de rugby: adultos", null, 1, 3,0);
+
+        Cargar(14, "¿Por qué se canceló el deporte del Pato?", "Porque era un juego muy violento",
+                "Porque había poco interés del público",
+                "Muerte de un gaucho famoso", "lucha de proteccionistas por el maltrato a los animales (Pato - Caballo)",
+                2, 3,0);
+
+        Cargar(15, "Se le dice copiloto al acompañante del piloto en el Rally", "Falso", "Verdadero",
+                "El término copiloto, se entiende pero el término correcto es navegante", null, 1, 3,0);
+
+        Cargar(16, "¿Cuál es el PRINCIPAL BENEFICIO del Rally en Córdoba?", "Genera un gran incremento en la economía local",
+                "Gran entrenamiento para pilotos argentinos", "Le da fama y prestigio mundial a córdoba",
+                "Fomenta la industria automotriz nacional", 2, 3,0);
+
+        Cargar(17, "Está planificado que el Estadio Arena tenga un albergue para 100 deportistas", "Verdadero", "Falso",
+                null, null, 1, 3,0);
+
+        Cargar(18, "¿De qué trata el estilo libre del bicycle motocross?", "Realizar acrobacias en el aire",
+                "Recorrer cornisas y edificaciones altas", "Deporte recreativo, para pasear",
+                "Recorrer montañas y hacer senderos peligrosos", 2, 3,0);
+
+        Cargar(19, "El Hotel Portal del Lago es el primer hotel de 5 estrellas de Villa Carlos Paz?", "Falso", "Verdadero",
+                "Fue el primer hotel de 4 estrellas de la villa", null, 1, 3,0);
+
+        Cargar(20," Los años lo han cambiado... ¿Qué puente de la famosa Ciudad de los puentes es?","Puente Negro",
+                "Puente Las Mojarras","Puente Carretero","Puente Carena",3,3,0);
+
+        Cargar(21,"El Shakedown es un tramo clasificatorio del Rally","Falso","Verdadero","Es un tramo de prueba técnica",
+                null,1,3,0);
+
+        Cargar(22,"Estancia Vieja fue de los primeros pueblos de la zona en poblarse, de allí su nombre","Falso","Verdadero",
+                "La comuna de Estancia Vieja tiene recien 46 años. Su nombre es por el casco de la estancia, con una fachada muy antigua.",
+                null,1,3,0);
+
+        Cargar(23,"La principal característica del alfajor cordobés es que está hecho con fruta","Verdadero","Falso",
+                null,null,1,3,0);
+
 
         GuardarPref();
     }
@@ -343,6 +394,7 @@ public class MainActivity extends AppCompatActivity {
     }
     int puntAcumulado = 0, correctasAcumuladas = 0, incorrectasAcumuladas = 0;
     float promedio = 0;
+
     public void OnClickCargarResultado(View view) {
         int puntDB = 1;
         boolean band = false;
