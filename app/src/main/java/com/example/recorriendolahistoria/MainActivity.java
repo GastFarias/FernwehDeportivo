@@ -305,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
                 "El más grande se encuentra al norte de Chile",
                 null,1,2,0);
 
-        Cargar(7, "Los autos que realizaron la carrera del observatorio eran...", "Fiat 1", "Fiat 600", "Fiat 125",
+        Cargar(7, "Los autos que realizaron la \" Carrera del Observatorio \" eran...", "Fiat 1", "Fiat 600", "Fiat 125",
                 "Fiat 128", 2, 2,0);
 
         Cargar(8, "¿Qué mineral es el que se encuentra en la imagen?", "Feldespato", "Mica", "Berilio",
@@ -325,7 +325,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Cargar(13, "Sólo hay categoría masculina en el Rugby del Carlos Paz Rugby Club", "Falso", "Verdadero",
+        Cargar(13, "Sólo hay categoría masculina en el Rugby del \"Carlos Paz Rugby Club\" ", "Falso", "Verdadero",
                 "Hay una categoría femenina de rugby: adultos", null, 1, 3,0);
 
         Cargar(14, "¿Por qué se canceló el deporte del Pato?", "Porque era un juego muy violento",

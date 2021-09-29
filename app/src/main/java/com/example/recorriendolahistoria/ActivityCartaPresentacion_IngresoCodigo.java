@@ -35,8 +35,9 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
         if (bolValen == 1 || bolEuge == 1 || bolBrune == 1){
             btnIngresar.setText("Ingresar");
         }
-        tv_carta.setText("Hola a todos y bienvenidos a nuestra aplicación!" +
-                " Somos el grupo de Fernweh deportivo que pensamos en esta divertida forma para ponernos a entrenar los cerebros. " +
+        tv_carta.setText("Hola a todos y ¡Bienvenidos a nuestra aplicación!" +
+                " Somos el grupo de Fernweh Deportivo que pensamos en esta divertida forma para ponernos a entrenar los cerebros. " +
+                "\n Prepárense para competir por un gran premio" +
                 "\n\n   Para ingresar, mañana les daremos los códigos especiales de guías \n\n   ¡ Muchas Gracias por elegirnos !");
 
     }

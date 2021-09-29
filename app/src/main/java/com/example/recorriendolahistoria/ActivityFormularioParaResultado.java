@@ -42,7 +42,7 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
         Correctas = "Respuestas Correctas: " + bundle.get("Correctas Acumuladas").toString();
         Incorrectas = "Respuestas Incorrectas: " + bundle.get("Incorrectas Acumuladas").toString();
         puntosTraidos = (int) bundle.get("Puntos acumulados");
-        PuntosAcum = "Acumulaste " + puntosTraidos + " Puntos";
+        PuntosAcum = "Acumulaste: " + puntosTraidos + " Puntos";
 
 
         tvProm = findViewById(R.id.tvPromedio);
