@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.recorriendolahistoria.entidades.Preguntas;
 import com.example.recorriendolahistoria.utilidades.Utilidades;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -286,16 +287,16 @@ public class MainActivity extends AppCompatActivity {
                 "El automovilismo, la noche y los teatros", "El automovilismo, las rutas y los hoteles",
                 "La noche, los hoteles y el lago San Roque ", "El automovilismo, el lago y los teatros", 2, 1,0);
 
-        Cargar(2, "¿Quien creo la \"Semana de la Velocidad\"?", "Alcides Raies", "Jorge Descotte.",
+        Cargar(2, "¿Quíen creo la \"Semana de la Velocidad\"?", "Alcides Raies", "Jorge Descotte.",
                 "Oscar Alfredo Galvez", "Martin Cristi", 2, 1,0);
 
-        Cargar(3," ¿En 1950 se corre la primera carrera en Villa Carlos Paz?","Falso","Verdadero","Se corre en el año 1958"
+        Cargar(3,"En 1950 se corre la primera carrera en Villa Carlos Paz","Falso","Verdadero","Se corre en el año 1958"
                 ,null,1,1,0);
 
-        Cargar(4, "¿Quien era Martin Cristi?", "Navegante", "Piloto", "Coleccionista",
+        Cargar(4, "¿Quíen era Martín Christie?", "Navegante", "Piloto", "Coleccionista",
                 "Periodista deportivo", 2, 1,0);
 
-        Cargar(5, "Dentro del bar Héroes, ¿De quien es el motor que se encuentra dentro?", "Pechito Lopez", "Colo Rosso",
+        Cargar(5, "¿De quíen es el motor que se encuentra dentro del bar Héroes? ", "Pechito Lopez", "Colo Rosso",
                 "Valentino Rossi", "Agustín Cannapino", 2, 1,0);
 
 
@@ -304,31 +305,32 @@ public class MainActivity extends AppCompatActivity {
                 "El más grande se encuentra al norte de Chile",
                 null,1,2,0);
 
-        Cargar(7, "Los autos que hicieron la carrera del observatorio eran...", "Fiat 1", "Fiat 600", "Fiat 125",
+        Cargar(7, "Los autos que realizaron la carrera del observatorio eran...", "Fiat 1", "Fiat 600", "Fiat 125",
                 "Fiat 128", 2, 2,0);
 
         Cargar(8, "¿Qué mineral es el que se encuentra en la imagen?", "Feldespato", "Mica", "Berilio",
                 "Cuarzo", 3, 2,0);
 
-        Cargar(9, "¿El mini golf comenzó como un deporte únicamente femenino?", "Verdadero", "Falso", null,
+        Cargar(9, "El mini golf comenzó como un deporte únicamente femenino", "Verdadero", "Falso", null,
                 null, 1, 2,0);
 
         Cargar(10, "¿Qué representan las siglas CONAE?", "Comisión Nacional de Actividades Espaciales",
                 "Complejo Nacional Espacial", "Centro Nacional Espacial", "Comisión Nacional Espacial", 2, 2,0);
 
-        Cargar(11, "¿Cuál es el origen del golf?", "Romano", "Francés", "Escocés", "Alemán", 2, 2,0);
+        Cargar(11, "¿Cuál es el origen del golf?",
+                "Romano", "Francés", "Escocés", "Alemán", 2, 2,0);
 
-        Cargar(12, "El primer circuito de \"rally\" semipermanente se hizo en...", "Pro Racing", "Circuito Costanera",
-                "Parque Temático", "Centro de Villa Carlos Paz", 2, 2,0);
+        Cargar(12, "El primer circuito de \"Rally\" semipermanente se hizo en...", "Pro Racing",
+                "Circuito Costanera","Parque Temático", "Centro de Villa Carlos Paz", 2, 2,0);
 
 
 
-        Cargar(13, "Sólo hay categoría masculina en el Rugby del Carlos Paz Rugby Club?", "Falso", "Verdadero",
+        Cargar(13, "Sólo hay categoría masculina en el Rugby del Carlos Paz Rugby Club", "Falso", "Verdadero",
                 "Hay una categoría femenina de rugby: adultos", null, 1, 3,0);
 
         Cargar(14, "¿Por qué se canceló el deporte del Pato?", "Porque era un juego muy violento",
                 "Porque había poco interés del público",
-                "Muerte de un gaucho famoso", "lucha de proteccionistas por el maltrato a los animales (Pato - Caballo)",
+                "Muerte de un gaucho famoso", "Lucha de proteccionistas por el maltrato a los animales (Pato - Caballo)",
                 2, 3,0);
 
         Cargar(15, "Se le dice copiloto al acompañante del piloto en el Rally", "Falso", "Verdadero",
@@ -341,14 +343,14 @@ public class MainActivity extends AppCompatActivity {
         Cargar(17, "Está planificado que el Estadio Arena tenga un albergue para 100 deportistas", "Verdadero", "Falso",
                 null, null, 1, 3,0);
 
-        Cargar(18, "¿De qué trata el estilo libre del bicycle motocross?", "Realizar acrobacias en el aire",
+        Cargar(18, "¿De qué trata el Estilo Libre del Bicycle Motocross (BMX)?", "Realizar acrobacias en el aire",
                 "Recorrer cornisas y edificaciones altas", "Deporte recreativo, para pasear",
                 "Recorrer montañas y hacer senderos peligrosos", 2, 3,0);
 
         Cargar(19, "El Hotel Portal del Lago es el primer hotel de 5 estrellas de Villa Carlos Paz?", "Falso", "Verdadero",
                 "Fue el primer hotel de 4 estrellas de la villa", null, 1, 3,0);
 
-        Cargar(20," Los años lo han cambiado... ¿Qué puente de la famosa Ciudad de los puentes es?","Puente Negro",
+        Cargar(20," Los años lo han cambiado... ¿Qué puente de la famosa \"Ciudad de los puentes\" es?","Puente Negro",
                 "Puente Las Mojarras","Puente Carretero","Puente Carena",3,3,0);
 
         Cargar(21,"El Shakedown es un tramo clasificatorio del Rally","Falso","Verdadero",
@@ -356,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
 
         Cargar(22,"Estancia Vieja fue de los primeros pueblos de la zona en poblarse, de allí su nombre","Falso",
                 "Verdadero",
-                "La comuna de Estancia Vieja tiene recien 46 años. Su nombre es por el casco de la estancia, con una fachada muy antigua.",
+                "Su nombre es por el casco de la estancia, con una fachada muy antigua.",
                 null,1,3,0);
 
         Cargar(23,"La principal característica del alfajor cordobés es que está hecho con fruta","Verdadero","Falso",
@@ -408,6 +410,7 @@ public class MainActivity extends AppCompatActivity {
             puntAcumulado = puntAcumulado + puntDB;
             if (puntDB == 1) incorrectasAcumuladas++;
             if (puntDB > 1) correctasAcumuladas++;
+
             promedio = (float) puntAcumulado / (incorrectasAcumuladas + correctasAcumuladas);
 
             if (puntDB == 0) {

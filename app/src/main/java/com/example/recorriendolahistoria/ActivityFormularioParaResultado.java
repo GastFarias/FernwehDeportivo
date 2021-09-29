@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class ActivityFormularioParaResultado extends AppCompatActivity {
 
     String Promedio, Correctas, Incorrectas, PuntosAcum;
@@ -30,9 +32,15 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
         setContentView(R.layout.activity_formulario_para_resultado);
 
         Bundle bundle = this.getIntent().getExtras();
-        Promedio = "Promedio de Puntos: " + bundle.get("Promedio").toString();
-        Correctas = "Preguntas Correctas: " + bundle.get("Correctas Acumuladas").toString();
-        Incorrectas = "Preguntas Incorrectas: " + bundle.get("Incorrectas Acumuladas").toString();
+        DecimalFormat formato = new DecimalFormat("#.00");
+
+        Float floatPromedio = (Float) bundle.get("Promedio");
+        String StringPromedio = formato.format(floatPromedio);
+
+        Promedio = "Promedio de Puntos: " + StringPromedio;
+                //Promedio = "Promedio de Puntos: " + bundle.get("Promedio").toString();
+        Correctas = "Respuestas Correctas: " + bundle.get("Correctas Acumuladas").toString();
+        Incorrectas = "Respuestas Incorrectas: " + bundle.get("Incorrectas Acumuladas").toString();
         puntosTraidos = (int) bundle.get("Puntos acumulados");
         PuntosAcum = "Acumulaste " + puntosTraidos + " Puntos";
 
@@ -99,10 +107,10 @@ public class ActivityFormularioParaResultado extends AppCompatActivity {
                 }
                 if (guardado == 0) {
                     Toast.makeText(getApplicationContext(), "Puntos extra: " + puntosExtra, Toast.LENGTH_SHORT).show();
-                    cartelPuntos.setText("¡ ¡ ¡ ¡ EXELENTE! ! ! ! Ganaste " + puntosExtra + " puntos extra");
+                    cartelPuntos.setText("¡ ¡ ¡ ¡ EXCELENTE! ! ! !\n Ganaste " + puntosExtra + " puntos extra");
                     cartelPuntos.setAlpha(1);
                     int pFinal = puntosTraidos + puntosExtra;
-                    PuntosAcum = "Acumulaste " + pFinal + " Puntos";
+                    PuntosAcum = "Acumulaste: " + pFinal + " Puntos";
                     tvPuntAcu.setText(PuntosAcum);
 
                     SharedPreferences preferencias = getSharedPreferences("CodigoUsado", Context.MODE_PRIVATE);

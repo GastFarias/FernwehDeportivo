@@ -37,7 +37,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
         }
         tv_carta.setText("Hola a todos y bienvenidos a nuestra aplicación!" +
                 " Somos el grupo de Fernweh deportivo que pensamos en esta divertida forma para ponernos a entrenar los cerebros. " +
-                "\n\n   Para ingresar, mañana les daremos los códigos especiales de guías \n\n   ¡Muchas Gracias por elegirnos !");
+                "\n\n   Para ingresar, mañana les daremos los códigos especiales de guías \n\n   ¡ Muchas Gracias por elegirnos !");
 
     }
     public void OnClick(View view){
@@ -46,7 +46,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
             SharedPreferences.Editor edit = preferences.edit();
             edit.putInt("Valen", 1);
             edit.commit();
-            Toast.makeText(getApplicationContext(), "Codigo - Valentina Gullo -", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Código - Valentina Gullo -", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
             startActivity(intent);
         }
@@ -56,7 +56,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
             SharedPreferences.Editor edit = preferences.edit();
             edit.putInt("Euge", 1);
             edit.commit();
-            Toast.makeText(getApplicationContext(), "Codigo - Eugenia Navarro -", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Código - Eugenia Navarro -", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
             startActivity(intent);
         }
@@ -66,7 +66,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
             SharedPreferences.Editor edit = preferences.edit();
             edit.putInt("Brune", 1);
             edit.commit();
-            Toast.makeText(getApplicationContext(), "Codigo - Brunella Bossi -", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Código - Brunella Bossi -", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
             startActivity(intent);
         }
@@ -75,7 +75,7 @@ public class ActivityCartaPresentacion_IngresoCodigo extends AppCompatActivity {
                 Intent intent = new Intent(ActivityCartaPresentacion_IngresoCodigo.this, MainActivity.class);
                 startActivity(intent);
             }else {
-                Toast.makeText(getApplicationContext(), "Por Favor Ingrese un Codigo de Guia ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Por Favor Ingrese un Codigo de Guía ", Toast.LENGTH_SHORT).show();
             }
             
         }
